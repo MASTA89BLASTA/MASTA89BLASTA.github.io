@@ -1,0 +1,605 @@
+@import "bourbon/core/_bourbon.scss";
+
+body {
+	font-family: "Raleway", sans-serif;
+	font-weight: normal;
+	font-size: 14px;
+	min-width: 320px;
+	position: relative;
+	line-height: 1.42857;
+	-webkit-font-smoothing: antialised;
+	padding : 0;
+	margin: 0;
+	
+}
+body input:focus:required:invalid,
+body textarea:focus:required:invalid {
+	color: red;
+}
+body input:required:valid,
+body textarea:required:valid{
+	color: green;
+}
+.hidden {
+	display: none;
+}
+
+//start doing project
+
+//задаем всем header и section позицию
+section,.main_head {
+	position: relative;
+	h3 {
+		text-align: center;
+		text-transform: uppercase;
+		font-size: 12px;
+		font-weight: 400;
+		margin-top: 0;
+		margin-bottom: 35px;
+	}
+	.personal_header {
+		font-size: 13px;
+		text-align: left;
+		margin-bottom: 30px;
+		color: #555555;	
+	}
+	.personal_last_block {
+		li {
+			a {
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+//стили для секций 
+section {
+	padding: 50px 0 90px;
+	
+	h2 {
+		text-align: center;
+		font-size: 24px;
+		text-transform: uppercase;
+		margin: 0 0 15px;
+	}
+}
+
+//Секции
+.s_descr_wrap {
+	text-align: center;
+	.s_descr {
+		display: inline-block;
+		text-transform: uppercase;
+		font-size: 12px;
+		position: relative;
+		margin-bottom: 130px;//отступ до контента
+		&::after {
+			content: "";
+			width: 150px;
+			height: 1px;
+			position: absolute;
+			left: 50%;
+			margin-left: -75px;
+			margin-top: 60px;
+		}
+	}
+}
+
+.main_head	{
+	min-height: 620px;//задаем мин высоту
+	padding-top: 20px;//отступ для лого
+}
+
+//logo
+.logo_container {
+	float: left;
+}
+
+//Page Preload
+.loader {
+    background: none repeat scroll 0 0 #ffffff;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+.loader_inner {
+	background-image: url("../img/preloader.gif");
+	background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #fff;
+    height: 60px;
+    width: 60px;
+    margin-top: -30px;
+    margin-left: -30px;
+    left: 50%;
+    top: 50%;
+    position: absolute;
+}
+
+//button menu
+.toggle_menu {
+	width: 60px;
+	height: 60px;
+	float: right;
+	position: fixed;
+	z-index: 100;
+	border: none;
+	outline: none;//убираем браузерную обводку
+	right: 20px;
+	top: 20px;
+	span {
+		display: block;//добавляем свойство для всех элементов .toggle_menu
+	}
+}
+
+//для всех svg
+svg {
+	height: 60px;
+	top: 0;
+	z-index: 100;
+	position: relative;
+}
+
+.row {
+	margin-right: 20px;
+  margin-left: 20px;
+}
+
+//стили для кнопки меню toggle_menu sandwich
+$w: 32px;
+$h: 3px;
+
+.sandwich {
+	width: $w;
+	height: $w;
+	position: absolute;
+	top: 12px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;	
+}
+
+
+
+.sw-topper {
+    position: relative;
+    top: 0;
+    width: $w;
+    height: $h;
+    background: rgb(255, 255, 255);
+    border: none; 
+    border-radius: 4px 4px 4px 4px;
+	transition: transform 0.5s, top 0.2s;
+}        
+    // transition-delay: 0.2s, 0s; 
+
+
+
+.sw-bottom {
+    position: relative;
+    width: $w;
+    height: $h;
+    top: $h * 2.2;    
+    background: rgb(255, 255, 255);
+    border: none;
+    border-radius: 4px 4px 4px 4px;
+    transition: transform 0.5s, top 0.2s;
+	transition-delay: 0.2s, 0s; 
+}
+.sw-footer {
+    position: relative;
+    width: $w;
+    height: $h;
+    top: $h * 4.5;
+    background: rgb(255, 255, 255);
+    border: none;
+    border-radius: 4px 4px 4px 4px;
+    transition: all 0.5s;
+	transition-delay: 0.1s; 	
+}
+
+.sandwich.active {
+  .sw-topper {
+    top: 10px;
+	transform: rotate(45deg);
+  }
+  .sw-bottom {
+    top: 7px;
+	transform: rotate(-45deg);
+  }	
+  .sw-footer {
+    opacity: 0;
+    top: 0;
+	transform: rotate(180deg);
+  }	
+}
+
+//Меню
+.top_menu {
+	position: fixed;
+	width: 100%;
+	height: 100%;	
+	z-index: 50; //делаем z-index 50 по отношению к .toggle_menu
+	right: 0;
+	top: 0;
+	display: none;
+	
+	ul, 
+	li {
+		list-style-type: none;		
+		padding: 0;
+		margin: 0;
+		//анимация для меню с задержкой
+		&:nth-child(1) a {
+			animation-duration: .5s;
+		}
+		&:nth-child(2) a {
+			animation-duration: 1s;
+		}
+		&:nth-child(3) a {
+			animation-duration: 1.5s;
+		}
+		&:nth-child(4) a {
+			animation-duration: 2s;
+		}
+		
+	}
+
+	ul {
+		margin-top: 180px;
+		text-align: center;
+		
+	}
+
+	a {
+		text-decoration: none;
+		display: block;
+		text-transform: uppercase;
+		font-size: 12px;
+		position: relative;
+		height: 60px;
+		span {
+			display: block;
+			padding: 20px 0;
+			position: relative;
+			top: -40px;
+			left: 0;
+			height: 100%;
+			transition: all 0.4s ease-out;//для плавного hover				
+		}
+	}
+}
+//рамка с именем
+.top_wrapper {
+	display: table;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 10;
+	.top_descr {
+		display: table-row;
+		.top_centered {
+			display: table-cell;
+			text-align: center;
+			vertical-align: middle;//выравниваем .top_centered по середине Header
+			background-color: rgba(0, 0, 0, .6)
+		}
+	}
+	.top_text {
+		display: inline-block;
+		
+		p{
+			text-transform: uppercase;
+			margin: 0;
+			animation-delay: 2s;
+		}
+		h1 {
+			display: inline-block;
+			padding: 10px 35px;
+			font-size: 2.8em;
+			text-transform: uppercase;
+			margin-left: 20px;
+			margin-right: 20px;
+			background-color: rgba(0, 0, 0, .1);
+			animation-delay: 1s;
+			opacity: 0;	
+					
+		}
+	}
+}
+
+
+
+//класс h_opacify для затемнения 
+.h_opacify {
+	opacity: .2;
+	transition-delay: .2s;//изменение свойства происходиn не моментально, а с некоторой задержкой. Не наследуется.	
+}
+
+//Секции с информацией
+//Секция Обо мне
+.s_about {
+	p {
+		margin-bottom: 25px;
+	}
+	ul,
+	li {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+	}
+	li {
+		margin-bottom: 25px;
+		.social_wrap {
+			margin-top: 25px;
+		}
+	}
+	.social_wrap {
+		li {
+			display: inline-block;
+			font-size: 20px;
+			padding: 0 3px;
+		}
+	}
+}
+
+.person {
+	text-align: center;
+	margin-bottom: 35px;
+	img {
+		max-width: 220px;
+		display: inline-block;
+		border-radius: 50%;
+		overflow: hidden;
+	}
+}
+
+//Секция резюме
+.resume_container {
+	h3{
+		font-weight: 700;
+		font-size: 15px;
+	}
+	.left_column_resume {
+		text-align: right;
+		border-right: #d2d2d2 1px solid;		
+		h3 {
+			text-align: right;
+		}
+		strong {
+			margin-left: 10px;
+		}
+	}
+
+	.right_column_resume {
+		text-align: left;
+		h3 {
+			text-align: left;
+		}
+		strong {
+			margin-right: 10px;
+		}
+	}
+
+	h3 {
+		margin-top: 30px;
+	}
+}
+
+.resume_item {
+	margin-bottom: 40px;
+	.year {
+		display: inline-block;
+
+		margin-bottom: 20px;
+		padding: 0 15px;
+		font-weight: 600;
+		font-style: italic;
+	}
+	.resume_description {
+		font-style: italic;
+	}
+	strong {
+		font-weight: 600;
+		text-transform: uppercase;
+		font-style: normal;
+	}
+	p {
+		margin-top: 10px;
+	}
+	&:last-child {
+		margin-bottom: 0;
+		p {
+			margin-bottom: 0;
+		}
+	}
+}
+.resume_icon {
+	font-size: 40px;
+	margin-bottom: 35px;	
+}
+
+//Секция Портфолио
+.s_portfolio {
+		ul,
+		li {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			text-align: center;
+		}
+		ul {
+			margin-bottom: 50px;
+		}
+		li {
+			display: inline-block;
+			font-size: 12px;
+			text-transform: uppercase;
+			margin: 0 10px;
+			line-height: 2;
+			cursor:pointer;
+			pointer-events: auto;
+		}
+}
+
+.portfolio_item {
+	padding: 0;
+	img {
+		width: 100%;
+	}
+	&:hover .port_item_cont {
+		opacity: 1;
+		padding-top: 20%;	
+	}
+}
+
+.port_item_cont {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	padding-top: 15%;
+	opacity: 0;
+	transition: all .5s;
+
+	h3 {
+		margin-bottom: 0;
+	}
+	a {
+		padding: 2px 10px;
+		text-decoration: none;
+		display: inline-block;
+		outline: none;
+		font-size: 13px;
+	}
+	p {
+		margin-top: 10px;
+	}	
+}
+
+.port_descr {
+	max-width: 500px;
+	max-height: 100%;
+	margin: auto;
+	position: relative;
+	p,
+	h3 {
+		padding: 20px;
+		padding-bottom: 0;
+	}
+	h3 {
+		margin-top: 20px;
+		margin-bottom: 0;
+		text-align: center;
+		text-transform: uppercase;
+		font-weight: 400;
+		padding-top: 25px;
+		
+	}
+	p {
+		margin-top: 10px;
+
+	}
+	img {
+		width: 100%;
+		margin-top: 25px;
+		margin-bottom: 0;	
+		display: block;	
+	}
+}
+
+//Секция Контакты
+.contact_box {
+	margin-bottom: 30px;
+	a {
+		text-decoration: none;
+	}
+	h3 {
+		text-align: left;
+		margin-bottom: 10px;
+		font-size: 14px;		
+	}
+	.contact_icon {
+		font-size: 30px;
+	}
+	p {
+		margin-top: 5px;
+	}
+}
+
+.main-form {
+	width: 600px;
+	margin: auto;
+}
+
+form {
+	position: relative;
+	input {
+		width: 100%;
+	}
+	button {
+		margin-top: 10px;
+		border: none;
+		line-height: 40px;
+		padding: 0 25px;
+		font-size: 13px;
+		text-transform: uppercase;
+		display: block;
+	}
+}
+
+/*.error{
+	color:red !important;
+}
+.error-text{	
+	border:1px solid red !important;
+}
+*/
+
+
+//footer
+.main_footer {
+	padding: 50px 0;
+	font-size: 13px;
+	font-weight: 300;
+	.copyright {
+		-top: 10px;
+	}
+	.social_wrap {
+		float: right;
+		line-height: 0;
+		ul {
+			margin: 0;
+		}
+		li {
+			display: inline-block;
+			font-size: 20px;
+			padding: 0 3px;
+		}		
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
