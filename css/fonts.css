@@ -1,0 +1,31 @@
+@font-face {
+  font-family: Raleway;
+  font-weight: normal;
+  font-style: eot woff ttf;
+  src: url("../fonts/RalewayRegular/RalewayRegular.eot");
+  src: url("../fonts/RalewayRegular/RalewayRegular.eot?#iefix") format("embedded-opentype"), url("../fonts/RalewayRegular/RalewayRegular.woff") format("woff"), url("../fonts/RalewayRegular/RalewayRegular.ttf") format("truetype"), url("../fonts/RalewayRegular/RalewayRegular.svg#Raleway") format("svg");
+}
+
+@font-face {
+  font-family: Raleway;
+  font-weight: bold;
+  font-style: eot woff ttf;
+  src: url("../fonts/RalewayBold/RalewayBold.eot");
+  src: url("../fonts/RalewayBold/RalewayBold.eot?#iefix") format("embedded-opentype"), url("../fonts/RalewayBold/RalewayBold.woff") format("woff"), url("../fonts/RalewayBold/RalewayBold.ttf") format("truetype"), url("../fonts/RalewayBold/RalewayBold.svg#Raleway") format("svg");
+}
+
+@font-face {
+  font-family: Raleway;
+  font-weight: 300;
+  font-style: eot woff ttf;
+  src: url("../fonts/RalewayLight/RalewayLight.eot");
+  src: url("../fonts/RalewayLight/RalewayLight.eot?#iefix") format("embedded-opentype"), url("../fonts/RalewayLight/RalewayLight.woff") format("woff"), url("../fonts/RalewayLight/RalewayLight.ttf") format("truetype"), url("../fonts/RalewayLight/RalewayLight.svg#Raleway") format("svg");
+}
+
+@font-face {
+  font-family: Raleway;
+  font-weight: 600;
+  font-style: eot woff ttf;
+  src: url("../fonts/RalewaySemiBold/RalewaySemiBold.eot");
+  src: url("../fonts/RalewaySemiBold/RalewaySemiBold.eot?#iefix") format("embedded-opentype"), url("../fonts/RalewaySemiBold/RalewaySemiBold.woff") format("woff"), url("../fonts/RalewaySemiBold/RalewaySemiBold.ttf") format("truetype"), url("../fonts/RalewaySemiBold/RalewaySemiBold.svg#Raleway") format("svg");
+}

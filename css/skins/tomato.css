@@ -1,0 +1,168 @@
+body {
+  color: #222;
+  letter-spacing: 1px;
+}
+
+a {
+  color: #ff6347;
+}
+
+p, body .main_footer {
+  color: #888;
+}
+
+.color_element {
+  color: #ff6347;
+}
+
+.color_bg {
+  background-color: #ff6347;
+}
+
+.color_border {
+  border-color: #ff6347;
+}
+
+.main_color_bg {
+  background-color: #222;
+}
+
+.main_color_bg_dark {
+  background-color: #222;
+  color: #fff;
+}
+
+.main_color_bg_dark .s_descr::after {
+  background-color: #fff;
+}
+
+.main_color_bg_dark a {
+  color: #fff;
+}
+
+.main_color_bg_light {
+  background-color: #fafafa;
+}
+
+svg path {
+  fill: #888;
+}
+
+.s_descr {
+  letter-spacing: 5px;
+}
+
+.s_descr::after {
+  background-color: #222;
+}
+
+.toggle_menu {
+  background-color: #000;
+}
+
+.top_menu {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.top_menu a {
+  color: #fff;
+  letter-spacing: 5px;
+}
+
+.top_menu a:hover {
+  color: #ff6347;
+}
+
+.top_menu a:hover span:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.top_wrapper .top_text p {
+  color: #fafafa;
+  letter-spacing: 5px;
+}
+
+.top_wrapper .top_text h1 {
+  color: #fff;
+  border: 8px solid #fff;
+}
+
+section h3 {
+  letter-spacing: 4px;
+  color: #888;
+}
+
+section .personal_header {
+  letter-spacing: 2px;
+}
+
+.s_about p:nth-child(even) {
+  color: #ff6347;
+}
+
+.s_about li {
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.resume_container h3 {
+  color: #222;
+  letter-spacing: 1px;
+}
+
+.resume_container .resume_item .year {
+  background-color: #ff6347;
+  color: #fff;
+}
+
+.resume_container .resume_description {
+  letter-spacing: 2px;
+}
+
+.s_portfolio li {
+  color: #888;
+  letter-spacing: 2px;
+}
+
+.s_portfolio li.active {
+  color: #fff;
+  border-bottom: 1px solid #ff6347;
+}
+
+.port_item_cont {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.port_item_cont h3 {
+  color: #fff;
+}
+
+.port_item_cont a {
+  color: #ff6347;
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-color: #ff6347;
+}
+
+.port_descr {
+  background-color: #fff;
+}
+
+.contact_box h3 {
+  color: #000;
+}
+
+.contact_box .contact_icon {
+  color: #ff6347;
+}
+
+form button {
+  background-color: #ff6347;
+  color: #fff;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.main_footer a {
+  color: #ff6347;
+}
